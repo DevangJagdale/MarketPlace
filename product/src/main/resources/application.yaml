@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: product
+  jpa:
+    generate-ddl: true
+  config:
+    import: configserver:http://localhost:9296
+# generate the hibernate entities
+# define our server port
+server:
+  port: 8082
+
+logging:
+  level:
+    root: WARN
+    web: INFO
+    com:
+      example: DEBUG
+
+
+
+# JWT secret key
+# node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+token:
+  secret:
+    key: 18a836ef60c6a29bcd9d3d1665bb517d300a730e4815858b99b84b6a357e23f0
+  expirationms: 3600000
+# JWT expiration is 1 hour
+
+
+#eureka.instance.prefer-ip-address=true
+#eureka.client.fetch-registry=true
+#eureka.client.register-with-eureka=true
+#eureka.client.service-url.defaultZone=http://localhost:8761/eureka

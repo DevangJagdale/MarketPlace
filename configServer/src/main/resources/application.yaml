@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: configServer
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/DevangJagdale/config-server
+          clone-on-start: true
+
+server:
+  port: 9296

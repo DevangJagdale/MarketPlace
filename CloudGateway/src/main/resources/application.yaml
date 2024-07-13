@@ -1,0 +1,40 @@
+server:
+  port: 8089
+
+logging:
+  level:
+    root: WARN
+    web: DEBUG
+    com:
+      example: DEBUG
+
+spring:
+  application:
+    name: CloudGateway
+  config:
+    import: configserver:http://localhost:9296
+  cloud:
+    gateway:
+      routes:
+        - id: authentication
+          uri: lb://authentication
+          predicates:
+            - Path=/auth/**
+        - id: product
+          uri: lb://product
+          predicates:
+            - Path=/product/**
+
+#jwt:
+#  secret: 18a836ef60c6a29bcd9d3d1665bb517d300a730e4815858b99b84b6a357e23f0
+#  expirationms: 3600000
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    fetch-registry: true
+#  client:
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+
