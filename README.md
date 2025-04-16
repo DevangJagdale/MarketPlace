@@ -3,7 +3,7 @@ MarketPlace GitHub repository(https://github.com/DevangJagdale/MarketPlace) is a
 ### **1. Tech Stack**
 - **Backend:** Spring Boot (Java)  
 - **Database:** Local H2 storage (SQL)  
-- **Authentication:** Possibly JWT (JSON Web Tokens) for secure login/logout  
+- **Authentication:** JWT (JSON Web Tokens) for secure login/logout  
 
 ### **2. Core Features**
 - **User Authentication & Role Management:**  
